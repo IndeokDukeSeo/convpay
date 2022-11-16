@@ -5,8 +5,8 @@ import com.zerobase.convpay.dto.PayCancelResponse;
 import com.zerobase.convpay.dto.PayRequest;
 import com.zerobase.convpay.dto.PayResponse;
 import com.zerobase.convpay.type.*;
-import com.zerobvase.convpay.dto.*;
-import com.zerobvase.convpay.type.*;
+import com.zerobase.convpay.dto.*;
+import com.zerobase.convpay.type.*;
 
 import java.util.HashMap;
 import java.util.Map;

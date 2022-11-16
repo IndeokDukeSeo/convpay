@@ -1,7 +1,7 @@
 package com.zerobase.convpay.service;
 
 import com.zerobase.convpay.type.*;
-import com.zerobvase.convpay.type.*;
+import com.zerobase.convpay.type.*;
 
 public class MoneyAdaptor implements PaymentInterface {
 
