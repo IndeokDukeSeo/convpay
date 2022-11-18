@@ -2,16 +2,21 @@ package com.zerobvase.convpay.service;
 
 import com.zerobvase.convpay.dto.*;
 import com.zerobvase.convpay.type.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
-
+@Component
 public class ConveniencePayService {
-    private final Map<PayMethodType, PaymentInterface> paymentInterfaceMap = new HashMap<>();
-    private final DiscountInterface discountInterface ;
+    private  Map<PayMethodType, PaymentInterface> paymentInterfaceMap = new HashMap<>();
+    private  DiscountInterface discountInterface ;
 
-    public ConveniencePayService(Set<PaymentInterface> paymentInterfaceSet, DiscountInterface discountInterface) {
+    public ConveniencePayService(Set<PaymentInterface> paymentInterfaceSet,
+                                 DiscountInterface discountInterface ) {
         paymentInterfaceSet.forEach(
                 paymentInterface -> paymentInterfaceMap.put(
                         paymentInterface.getPayMethodType(),
@@ -20,7 +25,6 @@ public class ConveniencePayService {
         );
         this.discountInterface = discountInterface;
     }
-
 
     public PayResponse pay(PayRequest payRequest) {
         PaymentInterface paymentInterface = paymentInterfaceMap.get(payRequest.getPayMethodType());
@@ -58,7 +62,6 @@ public class ConveniencePayService {
 //
 //        return new PayResponse(PayResult.SUCCESS, 100);
 //    }
-
 
     public PayCancelResponse payCancel(PayCancelRequest payCancelRequest) {
         PaymentInterface paymentInterface = paymentInterfaceMap.get(payCancelRequest.getPayMethodType());

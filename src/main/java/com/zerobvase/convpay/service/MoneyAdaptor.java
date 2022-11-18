@@ -1,9 +1,10 @@
 package com.zerobvase.convpay.service;
 
 import com.zerobvase.convpay.type.*;
+import org.springframework.stereotype.Component;
 
+@Component
 public class MoneyAdaptor implements PaymentInterface {
-
     public MoneyUseResult use(Integer payAmount) {
         System.out.println("MoneyAdaptor.use = " + payAmount);
         if (payAmount > 1000_000) {

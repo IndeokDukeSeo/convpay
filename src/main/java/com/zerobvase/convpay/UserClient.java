@@ -22,7 +22,6 @@ public class UserClient {
         ConveniencePayService conveniencePayService = applicationContext.getBean("conveniencePayService",
                 ConveniencePayService.class);
 
-
         //결제 1000원
 
         PayRequest payRequest = new PayRequest(PayMethodType.CARD, ConvenienceType.G25, 50);

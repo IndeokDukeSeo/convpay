@@ -2,7 +2,11 @@ package com.zerobvase.convpay.service;
 
 import com.zerobvase.convpay.dto.PayCancelResponse;
 import com.zerobvase.convpay.type.*;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
+
+@Component
 public class CardAdaptor implements PaymentInterface {
 
     //1. 인증
